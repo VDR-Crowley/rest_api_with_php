@@ -3,7 +3,6 @@
 
     use App\Models\User;
     use Exception;
-    use http\Client\Request;
 
     class UserService
     {
@@ -22,13 +21,13 @@
         /**
          * @throws Exception
          */
-        public function post(): string
+        public function post(): array
         {
             $message = $this->validateInfos($_POST, 'POST');
             if($message === 'success') {
                 return User::insert($_POST);
             }
-            return $message;
+            return ['message' => $message];
         }
 
         public function isValidPassword($password): bool
@@ -83,9 +82,9 @@
                 throw new Exception('A senha é um campo obrigatorio');
             }
 
-            if(!empty($data['password']) && !$this->isValidPassword($data['password'])) {
-                throw new Exception('Defina uma senha forte.');
-            }
+//            if(!empty($data['password']) && !$this->isValidPassword($data['password'])) {
+//                throw new Exception('Defina uma senha forte.');
+//            }
 
             if (empty($data['name'])) {
                 throw new Exception('O nome é um campo obrigatorio');
