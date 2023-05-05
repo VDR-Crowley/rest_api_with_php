@@ -168,4 +168,19 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
+
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,phpstorm,visualstudiocode,composer

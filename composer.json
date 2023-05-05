@@ -10,7 +10,17 @@
     "require": {
         "ext-pdo": "*",
         "ext-json": "*",
-        "ext-curl": "*",
-        "ext-http": "*"
+        "ext-curl": "*"
+    },
+    "scripts": {
+        "teste": "./vendor/bin/pest"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.23"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }
