@@ -82,9 +82,9 @@
                 throw new Exception('A senha é um campo obrigatorio');
             }
 
-//            if(!empty($data['password']) && !$this->isValidPassword($data['password'])) {
-//                throw new Exception('Defina uma senha forte.');
-//            }
+            if(!empty($data['password']) && !$this->isValidPassword($data['password']) && $method === 'POST') {
+                throw new Exception('Defina uma senha forte.');
+            }
 
             if (empty($data['name'])) {
                 throw new Exception('O nome é um campo obrigatorio');
