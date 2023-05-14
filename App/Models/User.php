@@ -52,7 +52,7 @@
             $db = self::connect();
             $stmt =  $db->prepare($sql);
             $stmt->bindValue(':email', $data['email']);
-            $stmt->bindValue(':password', $data['password']);
+            $stmt->bindValue(':password', password_hash($data['password'], PASSWORD_DEFAULT));
             $stmt->bindValue(':name', $data['name']);
             $stmt->execute();
             $lastId = $db->lastInsertId();;
