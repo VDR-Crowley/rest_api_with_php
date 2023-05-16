@@ -27,6 +27,6 @@
     if ($_GET['url']) {
         $url = explode('/', $_GET['url']);
         match($url[0]) {
-            'api' => api($url),
+            'api' => call_user_func('api', $url),
         };
     }
